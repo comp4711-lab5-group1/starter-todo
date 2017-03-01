@@ -60,7 +60,7 @@
             $this->data['pagination'] = $this->pagenav($num);
             $this->show_page($tasks);
         }
-        
+         
         // Build the pagination navbar
         private function pagenav($num) {
             $lastpage = ceil($this->tasks->size() / $this->items_per_page);
