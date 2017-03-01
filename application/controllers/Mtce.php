@@ -24,9 +24,10 @@
         // Show a single page of todo items
         private function show_page($tasks)
         {
-            $this->data['pagetitle'] = 'TODO List Maintenance';
+            $role = $this->session->userdata('userrole');
+            $this->data['pagetitle'] = 'TODO List Maintenance ('. $role . ')';
             // build the task presentation output
-            $result = ''; // start with an empty array      
+            $result = ''; // start with an empty array   
             foreach ($tasks as $task)
             {
                 if (!empty($task->status))
