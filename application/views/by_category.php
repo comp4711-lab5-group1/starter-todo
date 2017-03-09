@@ -14,7 +14,7 @@
         <td>{id}</td>
         <td><input type='checkbox' name='task{id}'/></td>
         <td>{task}</td>
-        <td>{Category}</td>
+        <td>{group}</td>
     </tr>
     {/display_tasks}    
 </table>
