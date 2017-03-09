@@ -50,16 +50,12 @@ class Views extends Application
         $parms['completer'] = ($role == ROLE_OWNER) ? '/views/complete' : '#';
                 
         return $this->parser->parse('by_priority', $parms, true);
-
-        /*$parms = ['display_tasks' => []];
-        $role = $this->session->userdata('userrole');
-        $parms['completer'] = ($role == ROLE_OWNER) ? '/views/complete' : '#';
-        return $this->parser->parse('by_priority',$parms,true);*/
     }
     
     function makeCategorizedPanel($tasks) {
-        $parms = ['display_tasks' => []];
-        return $this->parser->parse('by_category',$parms,true);
+        
+        $parms = ['display_tasks' => $this->tasks->getCategorizedTasks()];
+        return $this->parser->parse('by_category', $parms, true);
     }
     
     
